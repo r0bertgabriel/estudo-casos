@@ -52,4 +52,16 @@ finally:
     if conexao:
         conexao.close()
 
+# %% para verificarr se tabelas foram criadas
+try:
+    conexao = con.connect('floricultura.db')
+    cursor = conexao.cursor()
+
+    res = cursor.execute("SELECT name from sqlite_master")
+    print(res.fetchall())
+except con.DatabaseError as erro:
+    print("Erro no Banco de dados", erro)
+finally:
+    if conexao:
+        conexao.close()
 # %%
