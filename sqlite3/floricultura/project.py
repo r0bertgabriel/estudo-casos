@@ -11,7 +11,7 @@ Sobrenome_CLiente VARCHAR(40) NOT NULL,
 Telefone VARCHAR(12),
 Rua VARCHAR(40),
 Numero VarChar(5),
-Bairro VARCHAR(25),
+Bairro VARCHAR(25)
 );
 """
 sql_produtos = """
@@ -20,8 +20,7 @@ ID_Produto INTEGER PRIMARY KEY AUTOINCREMENT,
 Nome_Produto VARCHAR(30) NOT NULL,
 Tipo_Prroduto VARCHAR(25) NOT NULL,
 Preco DECIMAL(10,2) NOT NULL,
-Qtde_Estoque SMALLINT NOT NULL,
-
+Qtde_Estoque SMALLINT NOT NULL
 );
 """
 
@@ -52,3 +51,5 @@ except con.DatabaseError as erro:
 finally:
     if conexao:
         conexao.close()
+
+# %%
